@@ -29,7 +29,6 @@ export class HTMLMessage implements ComponentFramework.StandardControl<IInputs, 
         messageDiv.innerHTML = `${context.parameters.message.raw}`;
         container.appendChild(messageDiv);
         console.debug("Init done");
-
     }
 
 

@@ -1,0 +1,84 @@
+<!--https://www.geekboots.com/css/text-shaking-effect-->
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  h5 {
+    font-family: "Acme", sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    color: #000;
+    transform: skewX(-15deg);
+    text-shadow: 0 3px 5px #030303;
+    animation: shaking 0.6s 0s infinite alternate,
+      changeColor 4.8s 0.1s ease-in-out infinite;
+  }
+
+  @keyframes shaking {
+    0% {
+      transform: skewX(-15deg);
+    }
+    5% {
+      transform: skewX(15deg);
+    }
+    10% {
+      transform: skewX(-15deg);
+    }
+    15% {
+      transform: skewX(15deg);
+    }
+    20% {
+      transform: skewX(-15deg);
+    }
+    25% {
+      transform: skewX(15deg);
+    }
+    30% {
+      transform: skewX(-15deg);
+    }
+    35% {
+      transform: skewX(15deg);
+    }
+    50% {
+      transform: skewX(0deg);
+    }
+    100% {
+      transform: skewX(0deg);
+    }
+  }
+
+  @keyframes changeColor {
+    0% {
+      color: #fff;
+    }
+    24% {
+      color: #fff;
+    }
+    25% {
+      color: #f05112;
+    }
+
+    49% {
+      color: #f05112;
+    }
+
+    50% {
+      color: #f029cf;
+    }
+
+    74% {
+      color: #f029cf;
+    }
+    75% {
+      color: #9cdf20;
+    }
+    99% {
+      color: #9cdf20;
+    }
+    100% {
+      color: #3253e2;
+    }
+  }
+</style>
+<h5>Flexibility is not FREED❤️M!</h5>
