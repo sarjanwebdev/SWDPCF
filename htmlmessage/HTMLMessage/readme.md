@@ -1,11 +1,12 @@
 # HTMLMessage
 ## WHY
 > I felt a need for a unbound, readonly, configurable extensive label, so I created this.
+> I felt gap for a control that simply shows link from a related table, so I created this.
 
 ## WHAT
 A simple yet very flexible PCF control to display text with custom style using HTML tags or CSS styles on a Unified Interface Form in Model Driven Apps on Common Data Service (CDS) / Dynamics 365 / Power Platforms.
 The control could also be used for displaying lengthy text such as questions / instructions / information that cannot be displayed using out of the box label control. Text could be displayed with custom formats using HTML tags / CSS styles.
-* **What it is** : Intended use is as a label and fancy HTML/CSS/SVG renderer
+* **What it is** : Intended use is as a label/hyperlink and fancy HTML/CSS/SVG renderer
 * **What it is NOT**: An input/modifier/manipulator control
 
 ### Inspiration
@@ -69,6 +70,8 @@ And the message HTML itself is set using innerHTML property of the div element, 
 |4. **Spinning Text**:Just that!|[Spinning Text](https://pcf.gallery/spinning-text/)|![spinning text](images/example.spinning.text.gif)|[Code](samples/svg.spinning.text.htm)|
 |5. **Neon Flashing/Pulsating Glowing Text**:Just that!|[Glowing Text](https://pcf.gallery/glowing-text-control/) and [Pulsing Text](https://pcf.gallery/pulsing-text/)|![mixed html](images/example.neon.flash.gif)|[Code](samples/neon.flash.htm)|
 |6. **Iframe**:Any third party webpage|A countdown to a FIXED date (not a field value)|![iframe](images/example.countdownIFRAME.png)|[Code](samples/embedded.iframe.htm)|
+|7. **Latest Related Contact**:Show a hyperlink|Link to latest (MODIFIEDON DESCENDING) contact record [Sample OData URL](https://YourOrg.crm6.dynamics.com/api/data/v9.2/contacts?$select=fullname&$filter=_parentcustomerid_value%20eq%20{ID}&$orderby=modifiedon%20desc&$top=1). 💡 {ID} is replaced by current record's ID, read [How to get EntityId ](https://learn.microsoft.com/en-us/power-apps/developer/component-framework/faq#how-can-i-access-the-record-id-or-table-name).|![latest contact config](images/latest.contact.png)![latest contact output](images/latest.contact.output.png)|--|
+
 
 ## WHEN
 I have no committment or idea, when I can release more updates to this but if you really find another use case or PCF Gallery control scenario that can be addressed, pleasse get in touch.

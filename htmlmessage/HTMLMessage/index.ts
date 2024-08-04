@@ -22,17 +22,20 @@ export class HTMLMessage implements ComponentFramework.StandardControl<IInputs, 
      */
     public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container: HTMLDivElement): void {
         this._context = context;
+        const eid = `${context.parameters.entityId.raw}`;
         const messageDiv = document.createElement("div");
         messageDiv.id = "swd_pcf_output";
         //Thank you https://community.dynamics.com/blogs/post/?postid=dbae3ca3-fc59-4235-b38f-d60961f17c70
-        //Example https://<YourOrg>.crm6.dynamics.com/api/data/v9.2/contacts?$orderby=modifiedon desc&$top=1
+        //Example https://<YourOrg>.crm6.dynamics.com/api/data/v9.2/contacts??$select=fullname&$filter=(_parentcustomerid_value eq {ID})&$orderby=modifiedon desc&$top=1
         //This Top1 is important
         if (context.parameters.retrievemultipleentityname.raw === null) {
             messageDiv.innerHTML = `${context.parameters.message.raw}`;
         } else {
             const etn = `${context.parameters.retrievemultipleentityname.raw}`;
             const optsasis = `${context.parameters.retrievemultipleoptions.raw}`;
-            const opts = optsasis.includes("$top=1") ? optsasis : optsasis.concat("&$top=1");
+            const optstemplate = optsasis.includes("$top=1") ? optsasis : optsasis.concat("&$top=1");
+            //TODO TS2339: Property 'page' does not exist on type 'Context<IInputs, IEventBag>'.
+            const opts = optstemplate.replace(/{id}/ig, eid);
             context.webAPI.retrieveMultipleRecords(etn, opts).then(
                 function success(result) {
                     // perform operations on on retrieved records

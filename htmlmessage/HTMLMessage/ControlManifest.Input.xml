@@ -9,6 +9,8 @@
       <type>DateAndTime.DateOnly</type>
     </type-group>
     <property name="message" display-name-key="Message" description-key="Message" of-type="Multiple" usage="input" required="false" />
+    <property name="entityId" display-name-key="Entity Id" description-key="The id of the current record." of-type="SingleLine.Text" usage="input" required="false" />
+    <!-- <property name="entityName" display-name-key="Entity Name" description-key="The logical name of the type of the current record." of-type="SingleLine.Text" usage="input" required="false" /> -->
     <property name="retrievemultipleentityname" display-name-key="RetrieveMultipleEntityName" description-key="RetrieveMultipleEntityName" of-type="SingleLine.Text" usage="input" required="false" />
     <property name="retrievemultiplenamecolumn" display-name-key="RetrieveMultipleNameColumn" description-key="RetrieveMultipleNameColumn" of-type="SingleLine.Text" usage="input" required="false" />
     <property name="retrievemultipleoptions" display-name-key="RetrieveMultipleOptions" description-key="RetrieveMultipleOptions" of-type="SingleLine.Text" usage="input" required="false" />
