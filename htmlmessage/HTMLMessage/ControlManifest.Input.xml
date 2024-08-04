@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="SarjanWebDev" constructor="HTMLMessage" version="0.0.1" display-name-key="HTMLMessage" description-key="HTMLMessage description" control-type="standard" >
+  <control namespace="SarjanWebDev" constructor="HTMLMessage" version="0.0.1" display-name-key="HTMLMessage" description-key="HTMLMessage description" control-type="standard">
     <external-service-usage enabled="false">
     </external-service-usage>
     <property name="datetimecolumn" display-name-key="DateTimeColumn" description-key="Any Date or DateTime Column Or Field (e.g. CreatedOn)" of-type-group="datetypes" usage="bound" required="true" />
@@ -8,7 +8,10 @@
       <type>DateAndTime.DateAndTime</type>
       <type>DateAndTime.DateOnly</type>
     </type-group>
-    <property name="message" display-name-key="Message" description-key="Message" of-type="Multiple" usage="input" required="true" />
+    <property name="message" display-name-key="Message" description-key="Message" of-type="Multiple" usage="input" required="false" />
+    <property name="retrievemultipleentityname" display-name-key="RetrieveMultipleEntityName" description-key="RetrieveMultipleEntityName" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="retrievemultiplenamecolumn" display-name-key="RetrieveMultipleNameColumn" description-key="RetrieveMultipleNameColumn" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="retrievemultipleoptions" display-name-key="RetrieveMultipleOptions" description-key="RetrieveMultipleOptions" of-type="SingleLine.Text" usage="input" required="false" />
     <resources>
       <code path="index.ts" order="1"/>
       <img path="image.png" />
@@ -17,5 +20,8 @@
       <resx path="strings/HTMLMessage.1033.resx" version="1.0.0" />
       -->
     </resources>
+    <feature-usage>
+      <uses-feature name="webAPI" required="false" />
+    </feature-usage>
   </control>
 </manifest>
